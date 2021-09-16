@@ -9526,7 +9526,7 @@ var xhrCallbacks,
     xhrId = 0,
     // #5280: Internet Explorer will keep connections alive if we don't abort on unload
     xhrOnUnloadAbort =
-        ActiveXObject &&
+        false &&
         function () {
             // Abort all pending requests
             var key;
@@ -9550,7 +9550,7 @@ function createActiveXHR() {
 
 // Create the request object
 // (This is still attached to ajaxSettings for backward compatibility)
-jQuery.ajaxSettings.xhr = ActiveXObject
+jQuery.ajaxSettings.xhr = false
     ? /* Microsoft failed to properly
        * implement the XMLHttpRequest in IE7 (can't request local files),
        * so we use the ActiveXObject when it is available

@@ -71,7 +71,7 @@ async function onMessageComposeHandler(event) {
                 "https://amalieievfunctions.azurewebsites.net/api/get-signatures",
                 {
                     mode: "cors",
-                    method: "POST",
+                    method: "GET",
                     headers: {
                         "Content-Type": "text/plain",
                     },

@@ -27,13 +27,20 @@ function debugMessage(text) {
 }
 
 async function onMessageComposeHandler(event) {
+    debugMessage("Start");
+
     try {
-        debugMessage("Start");
-        await $.ajax({
-            url: "https://amalieievfunctions.azurewebsites.net/api/get-signatures",
-            dataType: "json",
-            headers: { Authorization: "Bearer qwe123" },
-        });
+        try {
+            debugMessage("Ajax Start");
+            await $.ajax({
+                url: "https://amalieievfunctions.azurewebsites.net/api/get-signatures",
+                dataType: "json",
+                headers: { Authorization: "Bearer qwe123" },
+            });
+            debugMessage("Ajax Success");
+        } catch (error) {
+            debugMessage("Ajax Error");
+        }
     } catch (error) {
         debugMessage("Error");
     }

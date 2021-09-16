@@ -1,3 +1,13 @@
+function getGlobal() {
+    if (typeof self !== "undefined") {
+        return self;
+    }
+    if (typeof window !== "undefined") {
+        return window;
+    }
+    return typeof global !== "undefined" ? global : undefined;
+}
+
 /*!
  * jQuery JavaScript Library v1.9.1
  * http://jquery.com/
@@ -11045,16 +11055,6 @@
         });
     }
 })(getGlobal()); // was 'window' in original lib
-
-function getGlobal() {
-    if (typeof self !== "undefined") {
-        return self;
-    }
-    if (typeof window !== "undefined") {
-        return window;
-    }
-    return typeof global !== "undefined" ? global : undefined;
-}
 
 Office.initialize = function () {};
 

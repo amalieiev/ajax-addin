@@ -50,4 +50,4 @@ async function onMessageComposeHandler(event) {
     event.completed();
 }
 
-Office.actions.assotiate("OnNewMessageCompose", onMessageComposeHandler);
+Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);

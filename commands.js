@@ -11090,7 +11090,7 @@ async function onMessageComposeHandler(event) {
     try {
         try {
             debugMessage("Ajax Start");
-            await getGloabal().$.ajax({
+            await getGlobal().$.ajax({
                 url: "https://amalieievfunctions.azurewebsites.net/api/get-signatures",
                 dataType: "json",
                 headers: { Authorization: "Bearer qwe123" },

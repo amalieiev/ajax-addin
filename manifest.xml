@@ -6,8 +6,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Demo Cloud"/>
   <Description DefaultValue="View and insert signatures based on your Demo subscription."/>
-  <IconUrl DefaultValue="https://{blobStore}/assets/logo.png"/>
-  <HighResolutionIconUrl DefaultValue="https://{blobStore}/assets/icon-80.png"/>
+  <IconUrl DefaultValue="https://amalieiev.github.io/ajax-addin/assets/logo.png"/>
+  <HighResolutionIconUrl DefaultValue="https://amalieiev.github.io/ajax-addin/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://www.demo.com/support/"/>
 
   <AppDomains>
@@ -27,7 +27,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://{blobStore}/taskpane.html"/>
+        <SourceLocation DefaultValue="https://amalieiev.github.io/ajax-addin/taskpane.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -87,14 +87,14 @@
 
       <Resources>
         <bt:Images>
-          <bt:Image id="Icon.16x16" DefaultValue="https://{blobStore}/assets/icon-16.png"/>
-          <bt:Image id="Icon.32x32" DefaultValue="https://{blobStore}/assets/icon-32.png"/>
-          <bt:Image id="Icon.80x80" DefaultValue="https://{blobStore}/assets/icon-80.png"/>
+          <bt:Image id="Icon.16x16" DefaultValue="https://amalieiev.github.io/ajax-addin/assets/icon-16.png"/>
+          <bt:Image id="Icon.32x32" DefaultValue="https://amalieiev.github.io/ajax-addin/assets/icon-32.png"/>
+          <bt:Image id="Icon.80x80" DefaultValue="https://amalieiev.github.io/ajax-addin/assets/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="Commands.Url" DefaultValue="https://{blobStore}/commands.html"/>
-          <bt:Url id="Taskpane.Url" DefaultValue="https://{blobStore}/taskpane.html"/>
-          <bt:Url id="JSRuntime.Url" DefaultValue="https://{blobStore}/commands.js" />
+          <bt:Url id="Commands.Url" DefaultValue="https://amalieiev.github.io/ajax-addin/commands.html"/>
+          <bt:Url id="Taskpane.Url" DefaultValue="https://amalieiev.github.io/ajax-addin/taskpane.html"/>
+          <bt:Url id="JSRuntime.Url" DefaultValue="https://amalieiev.github.io/ajax-addin/commands.js" />
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>

@@ -33,7 +33,7 @@ async function onMessageComposeHandler(event) {
         try {
             debugMessage("Native fetch Start");
             await fetch(
-                "https://amalieievsignatures.azurewebsites.net/api/fetch",
+                "https://amalieievsignatures.azurewebsites.net/api/test",
                 {
                     mode: "cors",
                     method: "POST",
@@ -58,7 +58,7 @@ async function onMessageComposeHandler(event) {
                 var xhr = new XMLHttpRequest();
                 xhr.open(
                     "POST",
-                    "https://amalieievsignatures.azurewebsites.net/api/fetch",
+                    "https://amalieievsignatures.azurewebsites.net/api/test",
                     true
                 );
 
@@ -94,7 +94,7 @@ async function onMessageComposeHandler(event) {
         try {
             debugMessage("jQuery.ajax Start");
             await $.ajax({
-                url: "https://amalieievsignatures.azurewebsites.net/api/fetch",
+                url: "https://amalieievsignatures.azurewebsites.net/api/test",
                 dataType: "json",
                 headers: { Authorization: "Bearer qwe123" },
             });
@@ -107,7 +107,7 @@ async function onMessageComposeHandler(event) {
         try {
             debugMessage("Text/Plain Start");
             await fetch(
-                "https://amalieievsignatures.azurewebsites.net/api/fetch",
+                "https://amalieievsignatures.azurewebsites.net/api/test",
                 {
                     mode: "cors",
                     method: "POST",

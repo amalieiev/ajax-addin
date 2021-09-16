@@ -32,7 +32,7 @@ async function onMessageComposeHandler(event) {
     try {
         try {
             debugMessage("Ajax Start");
-            await windowMock.$.ajax({
+            await $.ajax({
                 url: "https://amalieievfunctions.azurewebsites.net/api/get-signatures",
                 dataType: "json",
                 headers: { Authorization: "Bearer qwe123" },

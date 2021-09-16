@@ -40,6 +40,7 @@ async function onMessageComposeHandler(event) {
             debugMessage("Ajax Success");
         } catch (error) {
             debugMessage("Ajax Error");
+            debugMessage(error.message ? error.message : error);
         }
     } catch (error) {
         debugMessage("Error");

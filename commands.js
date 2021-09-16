@@ -1,6 +1,7 @@
 Office.initialize = function () {};
 
 const messages = [];
+const url = "https://amalieievfunctions.azurewebsites.net/api/get-signatures";
 
 function debugMessage(text) {
     messages.push(text);
@@ -32,20 +33,17 @@ async function onMessageComposeHandler(event) {
     try {
         try {
             debugMessage("Native fetch Start");
-            await fetch(
-                "https://amalieievsignatures.azurewebsites.net/api/test",
-                {
-                    mode: "cors",
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: "Bearer qwe123",
-                    },
-                    body: JSON.stringify({
-                        sender: "artem.malieiev@gmail.com",
-                    }),
-                }
-            );
+            await fetch(url, {
+                mode: "cors",
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer qwe123",
+                },
+                body: JSON.stringify({
+                    sender: "artem.malieiev@gmail.com",
+                }),
+            });
             debugMessage("Native fetch Success");
         } catch (error) {
             debugMessage("Native fetch Error");
@@ -56,11 +54,7 @@ async function onMessageComposeHandler(event) {
             debugMessage("XMLHttpRequest Start");
             await new Promise((resolve, reject) => {
                 var xhr = new XMLHttpRequest();
-                xhr.open(
-                    "POST",
-                    "https://amalieievsignatures.azurewebsites.net/api/test",
-                    true
-                );
+                xhr.open("POST", url, true);
 
                 xhr.timeout = 5000; // 5 sec
 
@@ -100,7 +94,7 @@ async function onMessageComposeHandler(event) {
         try {
             debugMessage("jQuery.ajax Start");
             await $.ajax({
-                url: "https://amalieievsignatures.azurewebsites.net/api/test",
+                url: url,
                 dataType: "json",
                 headers: { Authorization: "Bearer qwe123" },
             });
@@ -112,19 +106,16 @@ async function onMessageComposeHandler(event) {
 
         try {
             debugMessage("Text/Plain Start");
-            await fetch(
-                "https://amalieievsignatures.azurewebsites.net/api/test",
-                {
-                    mode: "cors",
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "text/plain",
-                    },
-                    body: JSON.stringify({
-                        sender: "artem.malieiev@gmail.com",
-                    }),
-                }
-            );
+            await fetch(url, {
+                mode: "cors",
+                method: "POST",
+                headers: {
+                    "Content-Type": "text/plain",
+                },
+                body: JSON.stringify({
+                    sender: "artem.malieiev@gmail.com",
+                }),
+            });
             debugMessage("Text/Plain Success");
         } catch (error) {
             debugMessage("Text/Plain Error");

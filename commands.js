@@ -1,5 +1,8 @@
 const windowMock = {
     XMLHttpRequest,
+    document,
+    location,
+    navigator,
 };
 
 /*!

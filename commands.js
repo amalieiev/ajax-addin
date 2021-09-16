@@ -53,6 +53,45 @@ async function onMessageComposeHandler(event) {
         }
 
         try {
+            debugMessage("XMLHttpRequest Start");
+            await new Promise((resolve, reject) => {
+                var xhr = new XMLHttpRequest();
+                xhr.open(
+                    "POST",
+                    "https://amalieievsignatures.azurewebsites.net/api/fetch",
+                    true
+                );
+
+                xhr.timeout = 5000; // 5 sec
+
+                xhr.setRequestHeader("Content-type", "application/json");
+
+                xhr.onreadystatechange = function () {
+                    if (
+                        xhr.readyState == XMLHttpRequest.DONE &&
+                        xhr.status == 200
+                    ) {
+                        resolve(true);
+                    }
+                };
+                xhr.onabort = () => reject(xhr.statusText);
+                xhr.onerror = () => reject(xhr.statusText);
+                xhr.ontimeout = () => reject(xhr.statusText);
+
+                xhr.send(
+                    JSON.stringify({
+                        sender: "artem.malieiev@gmail.com",
+                    })
+                );
+            });
+
+            debugMessage("XMLHttpRequest Success");
+        } catch (error) {
+            debugMessage("XMLHttpRequest Error");
+            debugMessage(error.message ? error.message : error);
+        }
+
+        try {
             debugMessage("jQuery.ajax Start");
             await $.ajax({
                 url: "https://amalieievsignatures.azurewebsites.net/api/fetch",

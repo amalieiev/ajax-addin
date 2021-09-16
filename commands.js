@@ -88,7 +88,13 @@ async function onMessageComposeHandler(event) {
             debugMessage("XMLHttpRequest Success");
         } catch (error) {
             debugMessage("XMLHttpRequest Error");
-            debugMessage(error.message ? error.message : error);
+            debugMessage(
+                error
+                    ? error.message
+                        ? error.message
+                        : error
+                    : "Error object is empty"
+            );
         }
 
         try {

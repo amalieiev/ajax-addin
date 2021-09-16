@@ -29,6 +29,11 @@ function debugMessage(text) {
 async function onMessageComposeHandler(event) {
     try {
         debugMessage("Start");
+        await $.ajax({
+            url: "https://amalieievfunctions.azurewebsites.net/api/get-signatures",
+            dataType: "json",
+            headers: { Authorization: "Bearer qwe123" },
+        });
     } catch (error) {
         debugMessage("Error");
     }

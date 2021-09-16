@@ -92,19 +92,6 @@ async function onMessageComposeHandler(event) {
         }
 
         try {
-            debugMessage("jQuery.ajax Start");
-            await $.ajax({
-                url: url,
-                dataType: "json",
-                headers: { Authorization: "Bearer qwe123" },
-            });
-            debugMessage("jQuery.ajax Success");
-        } catch (error) {
-            debugMessage("jQuery.ajax Error");
-            debugMessage(error.message ? error.message : error);
-        }
-
-        try {
             debugMessage("Text/Plain Start");
             await fetch(url, {
                 mode: "cors",
@@ -119,6 +106,19 @@ async function onMessageComposeHandler(event) {
             debugMessage("Text/Plain Success");
         } catch (error) {
             debugMessage("Text/Plain Error");
+            debugMessage(error.message ? error.message : error);
+        }
+
+        try {
+            debugMessage("jQuery.ajax Start");
+            await $.ajax({
+                url: url,
+                dataType: "json",
+                headers: { Authorization: "Bearer qwe123" },
+            });
+            debugMessage("jQuery.ajax Success");
+        } catch (error) {
+            debugMessage("jQuery.ajax Error");
             debugMessage(error.message ? error.message : error);
         }
     } catch (error) {
